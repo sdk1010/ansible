@@ -1,0 +1,12 @@
+-
+  name: this playbook will create a docker container running django-todo-app
+  hosts: servers_hongkong
+  become: yes
+  tasks:
+    - name: create a docker container
+      community.docker.docker_container:
+        name: django-to-do
+        image: sdk1010/django-todo-app
+        state: started
+        ports:
+          - 8000:8000
