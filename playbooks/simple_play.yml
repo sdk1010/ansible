@@ -1,0 +1,8 @@
+-
+  name: this playbook runs simple commands
+  hosts: <host_name or host_grp_name>
+  tasks:
+    - name: print date
+      command: date
+    - name: print memory status of hosts
+      command: free -h
