@@ -1,0 +1,9 @@
+-
+  name: this playbook will pull docker image of django-todo-app
+  hosts: servers_hongkong
+  become: yes
+  tasks:
+    - name: pull a docker image
+      community.docker.docker_image:
+        name: sdk1010/django-todo-app
+        source: pull
