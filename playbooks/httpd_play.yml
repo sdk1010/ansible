@@ -1,0 +1,14 @@
+-
+  name: this playbook installs apache2 httpd webserver
+  hosts: <host_name>
+  become: yes
+  tasks:
+    - name: install apache2 webserver
+      apt:
+        name: apache2
+        state: latest
+    - name: start apache2 webserver
+      service:
+        name: apache2
+        state: started
+        enabled: yes
