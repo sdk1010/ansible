@@ -1,0 +1,14 @@
+-
+  name: this playbook will install docker and awscli
+  hosts: <host_name>
+  become: yes
+  tasks:
+    - name: install docker
+      apt:
+        name: docker.io
+        state: latest
+    - name: install awscli
+      apt:
+        name: awscli
+        state: latest
+      when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
